@@ -21,16 +21,6 @@ pipeline {
                 bat 'call venv\\Scripts\\activate && pip install -r requirements.txt'
             }
         }
-        
-        stage('Run App') {
-    steps {
-        bat '''
-            call venv\\Scripts\\activate
-            python app.py
-        '''
-    }
-}
-
 
         stage('Package Application') {
     steps {
