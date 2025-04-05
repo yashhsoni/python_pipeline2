@@ -23,13 +23,12 @@ pipeline {
         }
 
         stage('Package Application') {
-            steps {
-                bat 'powershell -Command "if (Test-Path publish) { Remove-Item -Recurse -Force publish }"'
-                bat 'powershell -Command "New-Item -ItemType Directory -Path publish"'
-                bat 'powershell -Command "Copy-Item -Path .\\* -Destination .\\publish -Recurse -Force"'
-                bat 'powershell -Command "Compress-Archive -Path publish\\* -DestinationPath publish.zip -Force"'
-            }
-        }
+    steps {
+        bat 'powershell -Command "if (Test-Path publish.zip) { Remove-Item publish.zip -Force }"'
+        bat 'powershell -Command "Compress-Archive -Path app.py, requirements.txt, startup.txt -DestinationPath publish.zip -Force"'
+    }
+}
+
 
         stage('Deploy to Azure') {
             steps {
