@@ -4,7 +4,7 @@ pipeline {
     environment {
         AZURE_CREDENTIALS_ID = 'azure-service-principal-python'
         RESOURCE_GROUP = 'rg-jenkins'
-        APP_SERVICE_NAME = 'appservice-plan'
+        APP_SERVICE_NAME = 'app-service-plan2'
     }
 
     stages {
