@@ -26,7 +26,7 @@ pipeline {
             steps {
                 bat 'powershell -Command "if (Test-Path publish) { Remove-Item -Recurse -Force publish }"'
                 bat 'powershell -Command "New-Item -ItemType Directory -Path publish"'
-                bat 'powershell -Command "Copy-Item -Path .\\app.py, .\\requirements.txt, .\\startup.txt -Destination .\\publish -Force"'
+                bat 'powershell -Command "Copy-Item -Path .\\* -Destination .\\publish -Recurse -Force"'
                 bat 'powershell -Command "Compress-Archive -Path publish\\* -DestinationPath publish.zip -Force"'
             }
         }
