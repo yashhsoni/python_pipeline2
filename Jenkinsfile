@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AZURE_CREDENTIALS_ID = 'azure-service-principal2'
-        RESOURCE_GROUP = 'rg-jenkins'
+        RESOURCE_GROUP = 'rg-jenkins2'
         APP_SERVICE_NAME = 'pyapp95475'
     }
 
